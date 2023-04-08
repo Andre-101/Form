@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.control.HelloController">
+    <children>
+        <AnchorPane layoutX="100.0" prefHeight="70.0" prefWidth="400.0" style="-fx-background-color: #0C0E2BFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox layoutY="-30.0" prefHeight="61.0" prefWidth="400.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Separator prefWidth="200.0" visible="false" />
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#onUserButtonClicked" pickOnBounds="true" preserveRatio="true">
+                            <HBox.margin>
+                                <Insets top="6.0" />
+                            </HBox.margin>
+                            <image>
+                                <Image url="@images/user.png" />
+                            </image>
+                        </ImageView>
+                        <Separator prefWidth="200.0" visible="false" />
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#onLocationButtonClicked" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/location.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="6.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Separator prefWidth="200.0" visible="false" />
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#onEducationButtonClicked" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/education.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="6.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Separator prefWidth="200.0" visible="false" />
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#onExitButtonClicked" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/logout.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="6.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Separator prefWidth="200.0" visible="false" />
+                    </children>
+                </HBox>
+            </children></AnchorPane>
+        <AnchorPane fx:id="userPanel" layoutX="-4.0" layoutY="-7.0" prefHeight="311.0" prefWidth="400.0" style="-fx-background-color: #0C0E2BFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <JFXTextField fx:id="nameText" focusColor="#78e25d" layoutX="154.0" layoutY="17.0" promptText="Digite su nombre" style="-fx-text-fill: #dddddd;" />
+                <JFXTextField fx:id="lastNameText" focusColor="#78e25d" layoutX="154.0" layoutY="52.0" promptText="Digite su apellido" style="-fx-text-fill: #dddddd;" />
+                <JFXTextField fx:id="idText" focusColor="#78e25d" layoutX="154.0" layoutY="88.0" promptText="Digite su id" style="-fx-text-fill: #dddddd;" />
+                <Label layoutX="34.0" layoutY="20.0" text="NOMBRE:" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="55.0" text="APELLIDO:" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="91.0" text="IDENTIFICACION:" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <JFXComboBox fx:id="comboBoxID" layoutX="299.0" layoutY="89.0" prefHeight="25.0" prefWidth="76.0" promptText=" TIPO ID" style="-fx-background-color: WHITE;" />
+                <Separator layoutX="18.0" layoutY="144.0" opacity="0.5" prefHeight="3.0" prefWidth="363.0" />
+                <Label layoutX="43.0" layoutY="174.0" text="ESTADO CIVIL:" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <JFXComboBox fx:id="comboBoxRelation" layoutX="158.0" layoutY="171.0" prefHeight="25.0" prefWidth="135.0" promptText=" Seleccionar" style="-fx-background-color: WHITE;" />
+                <Label layoutX="43.0" layoutY="219.0" text="GENERO:" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <JFXRadioButton fx:id="maleRadioButton" layoutX="105.0" layoutY="239.0" text="Masculino" textFill="WHITE" />
+                <JFXRadioButton fx:id="femaleRadioButton" layoutX="230.0" layoutY="239.0" text="Femenino" textFill="WHITE" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="locationPanel" layoutX="120.0" layoutY="200.0" prefHeight="311.0" prefWidth="400.0" style="-fx-background-color: #0C0E2BFF;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="RESIDENCIA" textFill="#727070">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="119.0" layoutY="25.0" opacity="0.5" prefHeight="3.0" prefWidth="262.0" />
+            <Label layoutX="75.0" layoutY="53.0" text="PAÍS:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="85.0" text="ESTADO:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="117.0" text="CIUDAD:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="comboBoxCountries" layoutX="176.0" layoutY="50.0" onAction="#onComboCountriesChanged" prefHeight="25.0" prefWidth="144.0" promptText=" Seleccionar" style="-fx-background-color: WHITE;" />
+            <JFXComboBox fx:id="comboBoxStates" disable="true" layoutX="176.0" layoutY="82.0" onAction="#onComboStatesChanged" prefHeight="25.0" prefWidth="144.0" promptText=" Seleccionar" style="-fx-background-color: WHITE;" />
+            <JFXComboBox fx:id="comboBoxCities" disable="true" layoutX="176.0" layoutY="114.0" prefHeight="25.0" prefWidth="144.0" promptText=" Seleccionar" style="-fx-background-color: WHITE;" />
+            <Separator layoutX="14.0" layoutY="154.0" opacity="0.5" prefHeight="3.0" prefWidth="262.0" />
+            <Label layoutX="294.0" layoutY="141.0" text="CONTACTO" textFill="#727070">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="166.0" text="DIRECCIÓN:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField focusColor="#78e25d" layoutX="145.0" layoutY="163.0" promptText="Digite su dirección" style="-fx-text-fill: #dddddd;" />
+            <Label layoutX="28.0" layoutY="206.0" text="TEL 1:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField focusColor="#78e25d" layoutX="74.0" layoutY="203.0" prefHeight="25.0" prefWidth="107.0" promptText="Digite su telefono" style="-fx-text-fill: #dddddd;" />
+            <Label layoutX="212.0" layoutY="206.0" text="TEL 2:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField focusColor="#78e25d" layoutX="263.0" layoutY="203.0" prefHeight="25.0" prefWidth="107.0" promptText="Digite su telefono" style="-fx-text-fill: #dddddd;" />
+            <Label layoutX="65.0" layoutY="249.0" text="CELULAR:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField focusColor="#78e25d" layoutX="145.0" layoutY="246.0" prefHeight="25.0" prefWidth="31.0" promptText="+XX" style="-fx-text-fill: #dddddd;" />
+            <JFXTextField focusColor="#78e25d" layoutX="196.0" layoutY="246.0" prefHeight="25.0" prefWidth="107.0" promptText="XXX-XXX-XXXX" style="-fx-text-fill: #dddddd;" />
+         </children></AnchorPane>
+        <AnchorPane fx:id="educationPanel" layoutX="-14.0" layoutY="-17.0" prefHeight="311.0" prefWidth="400.0" style="-fx-background-color: #0C0E2BFF;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="INFORMACION ACADEMICA" textFill="#727070">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="226.0" layoutY="25.0" opacity="0.5" prefHeight="3.0" prefWidth="158.0" />
+            <Label layoutX="54.0" layoutY="44.0" text="NIVEL ACADEMICO:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="comboBoxAcademic" layoutX="187.0" layoutY="41.0" onAction="#onComboAcademicChanged" prefHeight="25.0" prefWidth="135.0" promptText=" Seleccionar" style="-fx-background-color: WHITE;" />
+            <Label layoutX="54.0" layoutY="84.0" text="TITULO:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="degreeText" disable="true" focusColor="#78e25d" layoutX="177.0" layoutY="81.0" prefHeight="25.0" prefWidth="144.0" promptText="Digite su titulo" style="-fx-text-fill: #dddddd;" />
+            <JFXToggleButton layoutX="40.0" layoutY="103.0" onAction="#onToggleButtonChanged" text="Estudiante" textFill="WHITE" />
+            <JFXTextField fx:id="careerText" disable="true" focusColor="#78e25d" layoutX="179.0" layoutY="119.0" prefHeight="25.0" prefWidth="144.0" promptText="Digite la carrera que cursa" style="-fx-text-fill: #dddddd;" />
+            <Separator layoutX="22.0" layoutY="162.0" opacity="0.5" prefHeight="3.0" prefWidth="276.0" />
+            <Label layoutX="308.0" layoutY="152.0" text="INTERESES" textFill="#727070">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXCheckBox layoutX="137.0" layoutY="211.0" text="Videojuegos" textFill="WHITE" />
+            <JFXCheckBox layoutX="22.0" layoutY="211.0" text="Ciencia" textFill="WHITE" />
+            <JFXCheckBox layoutX="22.0" layoutY="238.0" text="Investigación" textFill="WHITE" />
+            <JFXCheckBox layoutX="137.0" layoutY="184.0" text="Deportes" textFill="WHITE" />
+            <JFXCheckBox layoutX="22.0" layoutY="184.0" text="Tecnología" textFill="WHITE" />
+            <JFXCheckBox layoutX="137.0" layoutY="238.0" text="Televisión" textFill="WHITE" />
+            <JFXCheckBox layoutX="249.0" layoutY="184.0" text="Ocio" textFill="WHITE" />
+            <JFXCheckBox layoutX="249.0" layoutY="211.0" text="Mujeres" textFill="WHITE" />
+            <JFXCheckBox layoutX="249.0" layoutY="238.0" text="Apuestas" textFill="WHITE" />
+            <JFXButton layoutX="323.0" layoutY="271.0" onAction="#onSaveButtonClicked" style="-fx-background-color: #78e25d;" text="Guardar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></JFXButton>
+         </children></AnchorPane>
+        <ImageView fx:id="userArrow" fitHeight="20.0" fitWidth="33.0" layoutX="47.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/setarrow.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="locationArrow" fitHeight="20.0" fitWidth="33.0" layoutX="138.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@images/setarrow.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="educationArrow" fitHeight="20.0" fitWidth="33.0" layoutX="227.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@images/setarrow.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
