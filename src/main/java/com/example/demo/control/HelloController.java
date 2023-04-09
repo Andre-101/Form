@@ -176,12 +176,14 @@ public class HelloController implements Initializable {
         public void handle(KeyEvent keyEvent) {
             JFXTextField temp = (JFXTextField) keyEvent.getSource();
             if (willConsume) keyEvent.consume();
-            if ((!keyEvent.getCode().toString().matches("[0-9]") && keyEvent.getCode() != KeyCode.BACK_SPACE) || temp.getText().length() > maxLength - 1) {
+            if ((!keyEvent.getText().matches("[0-9]") && keyEvent.getCode() != KeyCode.BACK_SPACE) || temp.getText().length() > maxLength - 1) {
                 if (keyEvent.getEventType() == KeyEvent.KEY_PRESSED) {
                     willConsume = true;
                 } else if (keyEvent.getEventType() == KeyEvent.KEY_RELEASED) {
                     willConsume = false;
                 }
+            } else {
+                willConsume = false; // Restablecer a false si la tecla es un número o la tecla de retroceso
             }
         }
     };

@@ -6,6 +6,7 @@ module com.example.demo.control {
     requires okhttp3;
     requires org.json;
     requires com.fasterxml.jackson.databind;
+    requires javafx.graphics;
 
 
     opens com.example.demo to javafx.fxml;
