@@ -39,7 +39,8 @@ public class HelloApplication extends Application {
             });
 
             window.initStyle(StageStyle.TRANSPARENT);
-            window.setTitle("Formulario");
+            window.setTitle("Formulario ");
+            window.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/icon.png"))));
             scene.setFill(Color.TRANSPARENT);
             window.setScene(scene);
             window.show();
